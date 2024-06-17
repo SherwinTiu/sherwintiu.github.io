@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <!-- App title -->
+    <title>Sherwin Tiu - Website</title>
+    <!-- Link CSS file -->
+    <link rel="stylesheet" href="newstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="header">
+        <!-- Logo -->
+        <a href="newindex.html" class="logo">ST</a>
+        <!-- Hamburger icon -->
+        <input class="side-menu" type="checkbox" id="side-menu"/>
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <!-- Menu -->
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="newindex.html">Home</a></li>
+                <li><a href="newproject.html">Projects</a></li>
+                <li><a href="newdoc.html">Documents</a> </li>
+            </ul>
+        </nav>
+      </header>
+    <!-- Main content -->
+    <div class="main">
+        <section class="projects" id="projects">
+            <div>
+                <h2>
+                    Technical Projects
+                </h2>
+                <!-- <p>Lorem Ipsum</p> -->
+            </div>
+            
+            <div style="clear:both;"></div>
+
+            <div id="projects-container" class="projects-container">
+                <div class="project-card">
+                    <div class="background-video projecttext animate">
+                        <video id="background-video" autoplay loop muted>
+                            <source src="media/laser_animation_module.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="projecttext animate">
+                        <h3 class="tech_project">2-Degrees-of-Freedom Laser Animation Module</h3>
+                        <h4 class="tech_project">February 2024 - March 2024</h4>
+                        <h5 class="tech_project">DC Motors, Schematic and PCB design, STM32, Solidworks, Altium Designer</h5>
+                        <ul>
+                            <li>Collaborated with colleagues to design a laser animation module from scratch, including creation of mechanical designs and electrical schematic diagrams</li>
+                            <li>Modelled movements and created physical prototypes to test our design</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="project-card">
+                    <div class="background-img projecttext animate">
+                        <img src="media/tcp_socket_chat.png">
+                    </div>
+                    <div class="background-video projecttext animate">
+                        <video id="background-video" autoplay loop muted>
+                            <source src="media/tcp_socket_chat.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="projecttext animate">
+                        <h3 class="tech_project">TCP Socket Chat Application</h3>
+                        <h4 class="tech_project">November 2023</h4>
+                        <h5>Transmission Control Protocol (TCP), Python, Tkinter Graphical User Interface (GUI)</h5>
+                        <ul>
+                            <li>Collaborated with a partner to create a chat server-client application that communicates through the TCP protocol</li>
+                            <li>Used the Tkinter library to create a GUI for the chat application, increasing accessibility for the user</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="project-card">
+                    <div class="background-img projecttext animate">
+                        <img src="media/snake_game.png">
+                    </div>
+                    <div class="background-video projecttext animate">
+                        <video id="background-video" autoplay loop muted>
+                            <source src="media/snake_game.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="projecttext animate">
+                        <h3 class="tech_project">Snake Game with Python</h3>
+                        <h4 class="tech_project">November 2023</h4>
+                        <h5>Python, Tkinter Graphical User Interface (GUI)</h5>
+                        <ul>
+                            <li>Collaborated with a partner to make the classic snake game using Python's Tkinter Graphical User Interface</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="project-card">
+                    <div class="background-img projecttext animate">
+                        <img src="media/robot_car.jpg">
+                    </div>
+                    <div class="background-video projecttext animate">
+                        <video id="background-video" autoplay loop muted>
+                            <source src="media/robot_car.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="projecttext animate">
+                        <h3 class="tech_project">Magnetic Field Tracking Robot Car</h3>
+                        <h4 class="tech_project">March 2023 - April 2023</h4>
+                        <h5>PIC32, STM32, HC-05, embedded C/C++, SPI Protocol, GitHub</h5>
+                        <ul>
+                            <li>Created a car using principles of magnetic field for the hardware and embedded C for PIC 32 and STM32 microcontrollers</li>
+                            <li>Utilized SPI protocol to command and optimize car movements</li>
+                            <li>Implemented Bluetooth control for the car to enhance user experience</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="project-card">
+                    <div class="projecttext animate">
+                        <h3 class="tech_project">Controller for Reflow Oven Soldering</h3>
+                        <h4 class="tech_project">February 2023</h4>
+                        <h5>8051 Microcontroller, ASM-51 Assembly, SPI protocol, FSM logic, GitHub</h5>
+                        <ul>
+                            <li>Collaborated with a team to assemble and program a reflow oven soldering controller using FSM logic in 8051 microcontroller assembly</li>
+                            <li>Used SPI protocol to facilitate communication between the 8051 microcontroller and the temperature sensor</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="project-card">
+                    <div class="projecttext animate">
+                        <h3 class="tech_project">Simple RISC-V CPU</h3>
+                        <h4 class="tech_project">October 2022 - November 2022</h4>
+                        <h5>SystemVerilog, ModelSim, Quartus, FPGA, testbenching</h5>
+                        <ul>
+                            <li>Designed a CPU through SystemVerilog that can implement nine ARM v7 instructions involving memory fetching and input-output</li>
+                            <li>Analyzed waveform of signals on ModelSim for debugging and caught 100% of bugs in the code</li>
+                            <li>Implemented a systematic and thorough SystemVerilog testbench to test combinations of instructions and hardware functionality</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="project-card">
+                    <div class="projecttext animate">
+                        <h3 class="tech_project">International Space Station 3D Live-Tracking Website</h3>
+                        <h4 class="tech_project">September 2022</h4>
+                        <h5>Python, JavaScript, HTML, Django, React, Visual Studio</h5>
+                        <ul>
+                            <li>Conceptualized and collaborated on the development of a website for tracking the ISS within a 48-hour timeframe as part of the NASA Space Apps Challenge</li>
+                            <li>Debugged code, created a presentation deck, and demonstrated technical and leadership skills</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="project-card">
+                    <div class="projecttext animate">
+                        <h3 class="tech_project">Analysis of Battery Data using Classical and Quantum Machine Learning  </h3>
+                        <h4 class="tech_project">May 2022 - August 2022</h4>
+                        <h5>Python, IBM Qiskit, matplotlib, JupyterLab, machine learning</h5>
+                        <ul>
+                            <li>Gained understanding on the theories behind classical and quantum machine learning and applied them to a complex real-world scenario involving more than 100,000 datasets</li>
+                            <li>Conducted analysis of battery data through classical and quantum machine learning using the matplotlib library to determine the benefits of each type of machine learning</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="project-card">
+                    <div class="projecttext animate">
+                        <h3 class="tech_project">Redesigning a 3D Printer </h3>
+                        <h4 class="tech_project">February 2022</h4>
+                        <h5>AutoCAD</h5>
+                        <ul>
+                            <li>Worked with a team to improve an existing 3D printer on the market and used AutoCAD to model physical improvements and add precise modifications to the system</li>
+                            <li>Presented findings and proposals to a panel of judges, showcasing effective communications and a commitment to detailed understanding of the researched technology</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="project-card">
+                    <div class="projecttext animate">
+                        <h3 class="tech_project">Analysis of Watermelon Density to Assess Ripeness</h3>
+                        <h4 class="tech_project">January 2021 - March 2021</h4>
+                        <h5>MATLAB, Audacity, LaTeX</h5>
+                        <ul>
+                            <li>Collaborated with a partner online to gather experimental data and reproduce each other’s findings</li>
+                            <li>Self-learned MATLAB and various signal processing algorithms to analyze results and conclude on the research</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="project-card">
+                    <div class="projecttext animate">
+                        <h3 class="tech_project">Analysis on Effectiveness of Palm Oil as Protective Coating for Wood</h3>
+                        <h4 class="tech_project">June 2019 - March 2020</h4>
+                        <h5>Research and Data Analysis, Atomic Absorption Spectrometry</h5>
+                        <ul>
+                            <li>Led a group to discuss and implement plans and collaborations with university faculty members</li>
+                            <li>Wrote detailed records on the experiment over a few months and co-wrote the final paper, presenting it to the supervisor and impressing him</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="project-card">
+                    <div class="projecttext animate">
+                        <h3 class="tech_project">tubo,: Portable Hydroponics Farm for Urban Homes</h3>
+                        <h4 class="tech_project">November 2019 - December 2019</h4>
+                        <h5>Microsoft Office Suite, Business Case Study, Secondary Research</h5>
+                        <ul>
+                            <li>Led a group to create a business proposal addressing some of the Sustainable Development Goals</li>
+                            <li>Designed and self-learned important components of the hydroponics system and incorporated improvements such as modularity, resulting in a proposal lauded by professors</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+            <!-- TEMPLATE FOR TECHNICAL PROJECTS
+            <div class="project-card">
+                <div class="background-video projecttext animate">
+                    <video id="background-video" autoplay loop muted>
+                        <source src="media/IMG_2919.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="projecttext animate">
+                    <h3 class="tech_project">Project Title</h3>
+                    <h4 class="tech_project">Dates</h4>
+                    <h5>Tools</h5>
+                    <ul>
+                        <li>Lorem Ipsum</li>
+                        <li>Lorem Ipsum</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            -->
+        </section>
+
+    </div>
+
+    <div class="iconbutton">
+        <a href="#">
+          <!--Add the code here for the logo to appear and the icon to be actionable-->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" width="63px">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </a>
+    </div>
+    <script src="./newscript.js"></script>
+</body>
+</html>
