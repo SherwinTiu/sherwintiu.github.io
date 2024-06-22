@@ -251,15 +251,14 @@ hr {
     display: inline-block;
 }
 
-/* .skill-container {
-    margin-bottom: 50px;
-} */
-
 .collapsible {
-    background-color: gray; /* Green */
+    background-color: gray;
     border: 2px solid darkgray;
     color: white;
-    padding: 16px 32px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: auto;
+    padding-right: auto;
     text-align: center;
     text-decoration: none;
     display: inline;
@@ -458,6 +457,10 @@ hr {
        /* background: url("waving-hand.png") no-repeat; */
        background-size: cover;
     }
+
+    .projects-container {
+        margin-left: 0;
+    }
 }
 
 @keyframes projecttextanim {
@@ -556,10 +559,17 @@ hr {
 }
 
 .doc-column {
-  float: left;
-  padding: 10px;
-  width: 50%;
-  overflow: hidden;
+    float: left;
+    /* padding: 10px; */
+    width: 50%;
+    overflow: hidden;
+    margin: 0;
+}
+
+@media screen and (max-width: 375px) {
+    .doc-column {
+        width: 100%;
+    }
 }
 
 .iconbutton{
