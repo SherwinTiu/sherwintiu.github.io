@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <!-- App title -->
+    <title>PN Junctions</title>
+    <!-- Link CSS file -->
+    <link rel="stylesheet" href="../../topic.css"> <!-- For contents -->
+    <link rel="stylesheet" href="../../https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Include MathJax fo math renderings -->
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" window.MathJax = "{loader: {load: ['[tex]/ams']}, tex: {packages: {'[+]': ['ams']}}}"></script>
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            tags: 'ams'
+          }
+        };
+    </script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header class="header">
+      <!-- Logo -->
+      <a href="index.html" class="logo">ST</a>
+      <!-- Hamburger icon -->
+      <input class="side-menu" type="checkbox" id="side-menu"/>
+      <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+      <!-- Menu -->
+      <nav class="nav">
+          <ul class="menu">
+              <li><a href="../../index.html">Home</a></li>
+              <li><a href="../../newproject.html">Projects</a></li>
+              <li><a href="../../newdoc.html">Courses</a> </li>
+          </ul>
+      </nav>
+    </header>
+
+    <!-- Main content -->
+    <div class="main">
+        <section id="pn_junction">
+            <h2>PN Junctions</h2>
+            <h3>Diffusion of Carriers</h3>
+            <p>Diffusion is where particles move from an area of high concentration to an area of lower concentration. In this case, we have electrons. Through the movement of electrons and holes (the charge carriers), we get effective charge current and diffusion current.</p>
+            <p>This movement is based on <a href="https://en.wikipedia.org/wiki/Brownian_motion" style="text-decoration: underline;">Brownian motion (random walk)</a>, which occurs due to collisions between the electrons.</p>
+            
+            <div class="img-container"><img src="diffusion.jpg" style="width: 50%;"></div>
+            <h6>Figure 1. Carriers at certain points in x. From x to $\Delta x$, an electron will have 50% probability of going across surface A and vice-versa.</h6>
+            <!-- <script src="../.././newscript.js"></script> -->
+            
+            <h4>Drift and Diffusion Currents</h4>
+            <p>The First Law of Diffusion (for electrons) is given by \[ \begin{equation} J_n(x) = +q D_n \frac{d n(x)}{d x} \end{equation} \] where $D_n$ is the diffusion constant in $cm^2/s$ and $\frac{d n(x)}{d x}$ is the gradient of electron density. We can see that the current, $J_n(x)$, is proportional to the gradient of electron density. The equation is similar for holes, but with a change of sign: \[ \begin{equation} J_p(x) = -q D_p \frac{d p(x)}{d x} \end{equation} \]</p>
+            <p>The gradient of hole density $\frac{d p(x)}{d x}$ gives a negative value, cancelling out the negative sign in $J_p(x)$, resulting in a positive value. This means that the current due to the diffusion of holes move in the +x direction.</p>
+
+            <button class="collapsible projecttext animate"><p>How did we get the First Law of Diffusion?</p></button>
+            <div class="collapsible-content">
+                <p>Let $\Delta\tau$ be the average time between collissions (the scattering time)</p>
+                <p>Let $\Delta x$ be the average distance particles travel between collisions</p>
+                <p>When we go from $x$ to $x + \Delta x$, we have $\frac{n(x)}{2}$ number of particles that cross surface A, and when we go from $x + \Delta x$ to $x$, we have $\frac{n(x + \Delta x)}{2}$ number of particles that cross surface A. The 2 occurs because of randomness - a particle has a 50% probability of crossing the surface, much like a coin flip</p>
+                <p>So, the total number of particles that move into $x + \Delta x$ would be: \[ \begin{equation} \frac{n(x)}{2} - \frac{n(x) + \Delta x}{2} \end{equation} \]</p>
+                <p>which is the concentration. Now, multiplying the volume... \[ \begin{equation} \textcolor{red}{A \cdot \Delta x} (\frac{n(x)}{2} - \frac{n(x) + \Delta x}{2}) \end{equation} \]</p>
+                <p>... charge  \[ \begin{equation} \textcolor{red}{-q} \cdot A \cdot \Delta x (\frac{n(x)}{2} - \frac{n(x) + \Delta x}{2}) \end{equation} \]</p>
+                <p>... current \[ \begin{equation} -q \cdot A \cdot \Delta x (\frac{n(x)}{2} - \frac{n(x) + \Delta x}{2}) \textcolor{red}{\cdot \frac{1}{\Delta \tau}} \end{equation} \]</p>
+                <p>... current density \[ \begin{equation} \textcolor{red}{\frac{1}{A} \cdot} -q \cdot A \cdot \Delta x (\frac{n(x)}{2} - \frac{n(x) + \Delta x}{2}) \cdot \frac{1}{\Delta \tau} \end{equation} \]</p>
+                <p>We get (through some minor rearrangement and cancellation of surface A): \[ \begin{equation} J_n(x) = -q \cdot \frac{\Delta x^2}{\Delta x} \cdot \frac{n(x) - n(x + \Delta x)}{2 \Delta \tau} \end{equation} \]</p>
+                <p>Rearranging the equation again: \[ \begin{equation} J_n(x) = -q \cdot \frac{\Delta x^2}{2 \Delta \tau} \cdot \frac{n(x) - n(x + \Delta x)}{\Delta x} \end{equation} \]</p>
+                <p>We further simplify this equation: \[ \begin{equation} J_n(x) = q \cdot \frac{\Delta x^2}{2 \Delta \tau} \cdot \frac{d n}{d x} \end{equation} \]</p>
+                <p>... where $\frac{n(x + \Delta x) - n(x)}{\Delta x}$ is our diffusion constant now simplified as $\frac{d n}{d x}$. By defining a diffusion constant $D_n$ to be $\frac{\Delta x^2}{2 \Delta \tau}$, we get the First Law of Diffusion: \[ \begin{equation} J_n(x) = +q D_n \frac{d n}{d x} \end{equation} \]</p>
+                <p>Note the sign change from - to + when we defined our diffusion constant.</p>
+            </div>
+
+            <p>The total current in a semiconductor is given by the sum of the drift and diffusion currents for both electrons and holes.</p>
+            <p>\[\begin{equation}J(x) = J_n(x) + J_p(x)\end{equation}\]</p>
+            <p>\[\begin{equation}J_n(x) = q \mu_n\ n(x)E(x) + qD_n\frac{d n(x)}{dx}\end{equation}\]</p>
+            <p>\[\begin{equation}J_p(x) = q \mu_p\ p(x)E(x) + qD_p\frac{d p(x)}{dx}\end{equation}\]</p>
+            <p>In equations 13 and 14, $q \mu_n\ n(x)E(x)$ represents the drift current and $qD\frac{d n(x)}{dx}$ represents the diffusion current. The kinetic energy is given by \[\begin{equation}K.E. = \frac{m_n^* v_{avg}^2}{2} = kT \rightarrow \frac{v_{avg}^2}{2} = \frac{kT}{m_n^*} \end{equation}\]</p>
+            <p>Where $T$ is the temperature, and $k$ is the Boltzmann constant, defined as $1.380 \cdot 10^{-23} J \cdot K^{-1}$. We can use equation (15) to show that the diffusion constant $D_n$ and drift mobility $\mu_n$ are related: </p>
+            <p>\[\begin{equation}\begin{split}D_n & = \frac{\Delta x^2}{2 \Delta \tau} \\ 
+                & = \frac{(v_{avg} \cdot \Delta \tau)^2}{2 \Delta \tau} \\
+                & = \frac{v_{avg}^2}{2} \cdot \Delta \tau \\
+                & = \frac{kT}{m_n^*} \cdot \Delta \tau \\
+                & = \frac{kT}{q} \cdot \frac{q \tau}{m_n^*} \\
+                & = \frac{kT}{q} \cdot \mu_n
+                \end{split}\end{equation}\]
+            </p>
+            <p>This is the Einstein relation. By rearranging terms from equation 16, we can get the thermal voltage $V_{th}$: \[\begin{equation} \frac{D_n}{\mu_n} = \frac{kT}{q} = V_{th} \end{equation}\]</p>
+
+            <div class="img-container"><img src="drift_diffusion.jpg" style="width: 50%;"></div>
+            <h6>Figure 2. The directions of drift and diffusion currents for electrons (n) and holes (p)</h6>
+
+            <button class="collapsible projecttext animate"><p>A quick explainer on Diffusion and Drift Currents</p></button>
+            <div class="collapsible-content">
+                <ul>
+                        <li>Diffusion Current 
+                            <ul>
+                                <li>The current caused by the majority carrier (electrons) on n-side crossing into p-side</li>
+                            </ul>
+                        </li>
+                        <li>Drift Current 
+                            <ul>
+                                <li>The current caused by the minority carrier (electrons) on p-side "wandering" into the transition/depletion region</li>
+                                <li>This current is small because there are few minority carriers</li>
+                            </ul>
+                        </li>
+                    </ul>
+                
+            </div>
+            <button class="collapsible projecttext animate"><p>A note on mobility</p></button>
+            <div class="collapsible-content">
+                <p>The mobility (diffusion constant) is not constant, although ideally it should. As such we would need to account for effects of the temperature and electric field on mobility.</p>
+                <p>For temperature dependence, mobility depends on lattice scattering ($t_{lat}$) and impurity scattering ($t_{ion}$). Thus, collision time $t_{col}$ would be: \[\begin{equation}t_{col}^{-1} = t_{ion}^{-1} + t_{lat}^{-1}\end{equation}\]</p>
+                <div class="img-container"><img src="t_dependence.jpg" style="width: 50%;"></div>
+                <h6>Figure 3. Mobility vs temperature, both in log scale. Mobility becomes lower at both lower temperatures (due to Coulomb attraction) and at higher temperatures (due to more vibrations of the atom, hence more collisions, impeding mobility).</h6>
+                <div class="img-container"><img src="coulomb_attraction.jpg" style="width: 50%;"></div>
+                <h6>Figure 4. Coulomb attraction. At lower temperatures, there is lower energy, so the electron will get more attracted by the positive charge, which affects the path of the electron more as the electron goes closer to the positive charge.</h6>
+            </div>
+
+            <!-- ===================================================================================================================================================================== -->
+
+            <h3>PN Junctions</h3>
+            <p>As the name suggests, PN junctions are formed when we put p-type semiconductors together with n-type semiconductors in contact. Let us assume that we have an acceptor dopant density $N_A$ for the p-type semiconductor and a donor dopant density $N_D$ for the n-type semiconductor.</p>
+            <!-- Insert image -->
+            <div class="img-container"><img src="pn_separate.jpg" style="width: 75%;"></div>
+            <h6>Figure 5. The PN junction separated into the p-type and n-type semiconductor. The band diagrams to the right of each semiconductor shows what happens when we combine the two semiconductors together, with their Fermi energies changing.</h6>
+
+            <p>When a junction is forming, electrons flow from n to p while holes go from p to n and carry a positive charge. Both electrons and holes would rush to the boundary, and the holes would end up in a region full of electrons, resulting in a high recombination rate, which leads to depletion and the existence of the depletion region. This creates an internal electric field, which stops the flow of majority carriers from happening (diffusion).</p>
+            <p>The depletion region region has fixed ions left after the depletion of free electrons and holes. P-type acceptor atoms leave negative ions and n-type donor atom leave positive ions. As such, the charge density in the n-type depletion region is $+q N_D$ and the charge density in the p-type depletion region is $-q N_A$. In other areas of the PN Junction (outside the depletion region), charge density is zero, indicating that the other regions have neutral charge.</p>
+            <p>The equations for the Fermi energy for the p-type semiconductor would be \[\begin{equation} E_v - E_{Fp} = kT ln\frac{N_A}{N_V} \end{equation}\] or equivalently \[\begin{equation} E_i - E_{Fp} = kT ln\frac{N_A}{n_i} \end{equation}\]</p>
+            <p>The equations for the Fermi energy for the n-type semiconductor would be \[\begin{equation} E_{Fn} - E_{C} = kT ln\frac{N_D}{N_C} \end{equation}\] or equivalently \[\begin{equation} E_{Fn} - E_{i} = kT ln\frac{N_D}{n_i} \end{equation}\]</p>
+            
+            <p>When no voltage is applied and no current is flowing, the Fermi energy is the same everywhere in the PN Junction. This is because if energy is high on one side, the energy will 'diffuse' to the side with lower energy. This energy alignment can only be achieved through band bending that causes a potential barier $V_0$ at the junction.</p>
+            <!-- <button class="collapsible projecttext animate"><p>Relating potential $V$ and width $W$ of depletion region</p></button>
+            <div class="collapsible-content">
+                <p> Lorem Ipsum </p>
+            </div> -->
+            <button class="collapsible projecttext animate"><p>The Continuity Equation</p></button>
+            <div class="collapsible-content">
+                <p>The continuity equation is charge conservation. The flow of electrons and holes from other places affect the density of electrons and holes at a certain place.</p>
+            </div>
+
+            <!-- ===================================================================================================================================================================== -->
+
+            <h4>Forward and Reverse Bias</h4>
+            <!--<p>In figure xxxxxxxxxxxxxxxxxxxx, we compare what forward and reverse bias does to the PN junction.</p>-->
+            <!-- Insert image -->
+            <p>In reverse bias, the width of the depletion region increases while in forward bias the width is reduced. Looking at forward bias, this decreases drift and there would be a huge current by diffusion from p to n. The electric field also decreases. And vice versa for the reverse bias. Furthermore, for reverse bias, we can increase the drift current through optical excitation, which creates voltage (and is how photovoltaic cells work).</p>
+
+            <!-- ===================================================================================================================================================================== -->
+
+            <h4>Current in PN Junction</h4>
+            <p>The density of minority carriers on the n side (holes) changes as a function of external voltage $V_a$. When no voltage is applied, we have \[\begin{equation}J=J_n(0)+J_p(0)\end{equation}\]</p>
+            <p>The density of minority carriers changes with an applied voltage: \[\begin{equation} p_n(0) = p_{n0}e^{\frac{qV_a}{kT}} = p_{n0}e^{\frac{V}{V_{Th}}} \end{equation}\]</p>
+            <p>And the density of excess holes will be: \[\begin{equation} \hat{p}_n(0) = p_n(0) - p_{n0} = p_{n0}(e^{\frac{qV_a}{kT}} - 1) \end{equation}\]</p>
+            <p>\[\begin{equation} \hat{p}_n(x_n)=\hat{p}_n(0) e^{-\frac{x_n}{L_p}} = p_n(e^{\frac{V}{V_{Th}}} - 1) e^{-\frac{x_n}{L_p}} \end{equation}\]</p>
+            <p>And the current will be: \[\begin{equation} J_p = -qD_p\frac{\partial p_n}{\partial x_n} = q \frac{D_p}{L_p} p_{n0} (e^{\frac{V}{V_{Th}}} - 1) e^{-\frac{x_n}{L_p}} \end{equation}\]</p>
+            <p>Similarly, for minority carriers on the p side (electrons): \[\begin{equation} n_p(0) = n_{p0}e^{\frac{qV_a}{kT}} = n_{p0}e^{\frac{V}{V_{Th}}} \end{equation}\]</p>
+            <p>\[\begin{equation} \hat{n}_p(0) = n_p(0) - n_{p0} = n_{p0}(e^{\frac{qV_a}{kT}} - 1) \end{equation}\]</p>
+            <p>\[\begin{equation} \hat{n}_p(x_p)=\hat{n}_p(0) e^{-\frac{x_p}{L_n}} = n_p(e^{\frac{V}{V_{Th}}} - 1) e^{-\frac{x_p}{L_n}} \end{equation}\]</p>
+            <p>\[\begin{equation} J_n = -qD_n\frac{\partial n_p}{\partial x_p} = q \frac{D_n}{L_n} n_{p0} (e^{\frac{V}{V_{Th}}} - 1) e^{-\frac{x_p}{L_n}} \end{equation}\]</p>
+            <p>$L_n$ and $L_p$ are the Debye lengths, given by $\sqrt{D_n \tau_n}$ and $\sqrt{D_p \tau_p}$, respectively, with $\tau$ being the time consant. These equations are also valid for negative applied voltage $V_a$.</p>
+
+            <!-- \[\begin{equation}\end{equation}\] -->
+        </section>
+    </div>
+    
+    <div class="iconbutton">
+        <a href="#">
+          <!--Add the code here for the logo to appear and the icon to be actionable-->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" width="63px">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </a>
+    </div>
+    <script src="../.././newscript.js"></script>
+</body>
+</html>
