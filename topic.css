@@ -1,0 +1,349 @@
+/* Theming */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"); /* import font */
+
+:root{
+    --white: #f9f9f9;
+    --black: #36383F;
+    --gray: #85888C;
+} /* variables*/
+
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+body{
+    background-color: beige;
+    font-family: "Poppins", sans-serif;
+    z-index: 1;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+/* Header */
+.header{
+    background-color: var(--black);
+    box-shadow: 1px 1px 5px 0px var(--gray);
+    /* position: static; */
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+/* Logo */
+.logo {
+    display: inline-block;
+    color: var(--white);
+    font-size: 60px;
+    margin-left: 15px;
+}
+
+/* Nav menu */
+.nav {
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    overflow: hidden;
+    position: relative;
+}
+.menu a {
+    display: block;
+    padding: 30px;
+    color: var(--white);
+}
+
+.menu a:hover {
+    background-color: var(--gray);
+}
+
+.menu li {
+    text-align: center;
+}
+
+.nav {
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+/* Sub nav */
+.subnavbtn {
+    display: block;
+    padding: 30px;
+    color: var(--white);
+    text-align: center;
+}
+
+.subnav {
+    position: relative;
+    overflow: visible;
+}
+
+.subnav-content {
+    background-color:  var(--white);
+    width: 100%;
+    padding: 20px 0;
+    display: none;
+    top: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+    position: absolute;
+}
+
+.subnav-content a {
+    color: var(--black);
+    text-decoration: none;
+    padding: 0;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.subnav:hover .subnav-content {
+    display: block;
+    cursor: pointer;
+}
+
+/* Menu Icon */
+.hamb{
+    cursor: pointer;
+    float: right;
+    padding: 40px 20px;
+}/* Style label tag */
+
+.hamb-line {
+    background: var(--white);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+
+} /* Style span tag */
+
+.hamb-line::before,
+.hamb-line::after{
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.4s ease-out;
+    width: 100%;
+}
+.hamb-line::before{
+    top: 5px;
+}
+.hamb-line::after{
+    top: -5px;
+}
+
+.side-menu {
+    display: none;
+} /* Hide checkbox */
+
+
+/* Toggle menu icon */
+.side-menu:checked ~ nav{
+    max-height: 100%;
+}
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
+}
+
+/* Responsiveness */
+@media (min-width: 768px) {
+    .nav{
+        max-height: none;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
+    }
+    .subnav-content {
+        padding: 20px 0 ;
+        display: none;
+        background-color: var(--black);
+        overflow: hidden;
+    }
+    .subnav-content a {
+        color: white;
+    }
+    .menu li{
+        float: left;
+    }
+    .menu a:hover{
+        background-color: transparent;
+        color: var(--gray);
+    }
+
+    .hamb{
+        display: none;
+    }
+
+    .body {
+        background-color: beige;
+    }
+}
+
+/* ======================== Icon Button ====================== */
+
+.iconbutton{
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 3%;
+    bottom: 3%;
+    cursor: pointer;
+}
+
+/* ======================== Collapsible ====================== */
+
+.collapsible {
+    background-color: gray;
+    border: 2px solid darkgray;
+    color: white;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: auto;
+    padding-right: auto;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 16px;
+    overflow: auto;
+    cursor: pointer;
+    width: 100%;
+    margin: auto;
+}
+
+.active, .collapsible:hover {
+    background-color: #555;
+}
+
+.collapsible-content {
+    background-color: #f1f1f1;
+    overflow: hidden;
+    /* padding-top: 16px;
+    padding-bottom: 16px; */
+    padding: auto;
+    max-height: 0;
+    transition: max-height 1s ease-out;
+    margin-bottom: 20px;
+}
+
+.collapsible-content p {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-left: 8px;
+}
+
+.img-container {
+    width: 100%;
+    text-align: center;
+    margin-left: 8px;
+    display: block;
+    margin-bottom: 15px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+}
+
+.collapsible a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+.projecttext.in-view {
+    animation: projecttextanim 2s ease;
+}
+
+.projecttext ul li {
+    margin-left: 20px;
+    font-size: 20px;
+    list-style-type: square;
+}
+
+/* ======================== Content =========================== */
+
+.main {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    z-index: 0;
+}
+
+.main h1 {
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+
+.main h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.main h3 {
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.main h4 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+.main h5 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+/* For image captions */
+.main h6 {
+    font-size: 18px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-style: italic;
+    text-align: center;
+    font-weight: normal;
+}
+
+.main p {
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.main ul {
+    margin-left: 20px;
+    /* margin-top: 10px; */
+    list-style-type: disc;
+}
+
+.img-container {
+    text-align: center;
+}
+
